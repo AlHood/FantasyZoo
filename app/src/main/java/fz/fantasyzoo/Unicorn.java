@@ -25,12 +25,12 @@ public class Unicorn extends Animal {
 
     }
 
-    public boolean habitatCheck() {
-        return true;
+    public ArrayList<BiomeType> habitatCheck() {
+    return this.habitat;
     }
 
 
-    public void predate(ArrayList<Class> enclosurePop) {
-
+    public ArrayList<Class> predateCheck() {
+        return this.prey;
     }
 }

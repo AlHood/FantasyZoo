@@ -10,7 +10,7 @@ public class Dragon extends Animal {
 
     ArrayList<BiomeType> habitat;
     ArrayList<Class> prey;
-
+    Dragon placeholder;
     {
 
     }
@@ -29,12 +29,13 @@ this.prey.add(Unicorn.class);
 
     }
 
-    public boolean habitatCheck() {
-        return true;
+    public ArrayList<BiomeType> habitatCheck() {
+    return this.habitat;
     }
 
 
-    public void predate(ArrayList<Class> enclosurePop) {
+    public ArrayList<Class> predateCheck() {
+        return this.prey;
 
     }
 

@@ -10,8 +10,8 @@ abstract class Animal {
 
     public abstract void special();
 
-    public abstract boolean habitatCheck();
+    public abstract ArrayList<BiomeType> habitatCheck();
 
-    public abstract void predate(ArrayList<Class> enclosurePop);
+    public abstract ArrayList<Class> predateCheck();
 
 }
