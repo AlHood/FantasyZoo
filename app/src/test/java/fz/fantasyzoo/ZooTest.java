@@ -17,6 +17,7 @@ public class ZooTest {
     Zoo testZoo;
     Zoo zoo;
     Dragon dragon;
+    Unicorn unicorn;
     ArrayList<Enclosure> enclosureResult;
 int intResult;
     int intResult2;
@@ -29,6 +30,7 @@ Class classResult;
     public void before() {
 zoo = new Zoo();
        dragon = new Dragon();
+        unicorn = new Unicorn();
 testEnclosure = new Enclosure(BiomeType.FOREST);
 
     }
@@ -90,6 +92,31 @@ testEnclosure = new Enclosure(BiomeType.FOREST);
         assertEquals(1, intResult );
         assertEquals(1, intResult2);
 
+    }
+
+    @Test
+    public void test_checkPredationMatches() throws InstantiationException, IllegalAccessException {
+        zoo.addAnimalToPopulation(dragon, 0);
+        zoo.addAnimalToPopulation(unicorn, 0);
+//        in which i add a dragon and a prey unicorn to the ocean enclosure
+        zoo.weeklyPredationCheck();
+
+        intResult = zoo.reportEnclosurePopulationTotal(0);
+        intResult2 = zoo.reportEnclosureRemovalTotal(0);
+
+        assertEquals(2, intResult );
+        assertEquals(1, intResult2);
+
+    }
+
+    @Test
+    public void test_checkEnclosuresHaveBiomes() {
+       enclosureResult = zoo.getEnclosures();
+        for (Enclosure enclosure : enclosureResult) {
+            System.out.println(enclosure.getBiome());
+        }
+//        manually check output as OCEAN SWAMP FOREST MOUNTAIN
+//        recommended to re-run this test at the end of a large one involving all functions
     }
 
 

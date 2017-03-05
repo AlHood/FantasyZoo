@@ -17,6 +17,7 @@ public class Zoo {
     Enclosure forest;
     Enclosure mountain;
 Enclosure tempEnclosure;
+    Integer totalIncome;
 
 
 
@@ -45,9 +46,50 @@ Enclosure tempEnclosure;
         this.enclosures.set(enclosureIndex, tempEnclosure);
     }
 
+    public void addAllAnimalsToPopulation(ArrayList<Animal> animals, int enclosureIndex) {
+        tempEnclosure = new Enclosure(BiomeType.FOREST);
+        tempEnclosure = this.enclosures.get(enclosureIndex);
+        tempEnclosure.addBigPopulation(animals);
+        this.enclosures.set(enclosureIndex, tempEnclosure);
+    }
+
     public int reportEnclosurePopulationTotal(int enclosureIndex) {
         tempEnclosure = this.enclosures.get(enclosureIndex);
         return tempEnclosure.reportEnclosurePopulationTotal();
+    }
+
+
+
+    public int reportEnclosureImmigrationTotal(int enclosureIndex) {
+        tempEnclosure = this.enclosures.get(enclosureIndex);
+        return tempEnclosure.getImmigrants().size();
+    }
+
+
+
+    public int reportEnclosureRemovalTotal(int enclosureIndex) {
+        tempEnclosure = this.enclosures.get(enclosureIndex);
+        return tempEnclosure.getRemoval().size();
+    }
+
+    public Integer getWeeklyEarnings() {
+       totalIncome = 0;
+        for (Enclosure enclosure : this.enclosures) {
+           totalIncome += enclosure.getIncome();
+        }
+        return totalIncome;
+    }
+
+    public void weeklyPredationCheck() throws InstantiationException, IllegalAccessException {
+        for (Enclosure enclosure : this.enclosures) {
+            enclosure.checkPredation();
+        }
+    }
+
+    public void weeklyRemovalPerformance() throws InstantiationException, IllegalAccessException {
+        for (Enclosure enclosure : this.enclosures) {
+            enclosure.animalPredater();
+        }
     }
 
     public void weeklyHabitatCheck() throws IllegalAccessException, InstantiationException {
@@ -56,17 +98,22 @@ Enclosure tempEnclosure;
         }
     }
 
-    public int reportEnclosureImmigrationTotal(int enclosureIndex) {
-        tempEnclosure = this.enclosures.get(enclosureIndex);
-        return tempEnclosure.getImmigrants().size();
-    }
-
-    public void weeklyPredationCheck() {
+    public void weeklyImmigrationPerformance() throws InstantiationException, IllegalAccessException {
         for (Enclosure enclosure : this.enclosures) {
-            enclosure.checkPredationFailures();
+            enclosure.animalEvicter(this);
         }
     }
 
+    public void performWeeklyAdvance() throws IllegalAccessException, InstantiationException {
+//        predations, immigrants, budget
+        this.weeklyPredationCheck();
+        this.weeklyRemovalPerformance();
+        this.weeklyHabitatCheck();
+        this.weeklyImmigrationPerformance();
+        this.budget += this.getWeeklyEarnings();
+
+
+    }
 
 
 }

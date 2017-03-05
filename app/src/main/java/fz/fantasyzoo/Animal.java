@@ -14,4 +14,10 @@ abstract class Animal {
 
     public abstract ArrayList<Class> predateCheck();
 
-}
+    public abstract int getEarns();
+
+
+
+    }
+
+

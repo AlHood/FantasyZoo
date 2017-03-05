@@ -1,24 +1,25 @@
 package fz.fantasyzoo;
 
-import java.util.ArrayList;
-
 /**
- * Created by user on 03/03/2017.
+ * Created by user on 05/03/2017.
  */
 
-public class Unicorn extends Animal {
+import java.util.ArrayList;
 
+public class VileFishman extends Animal {
 
     ArrayList<BiomeType> habitat;
     ArrayList<Class> prey;
     int earns;
 
-    public Unicorn() {
+    public VileFishman() {
         this.habitat = new ArrayList<BiomeType>();
-        this.habitat.add(BiomeType.FOREST);
+        this.habitat.add(BiomeType.OCEAN);
+        this.habitat.add(BiomeType.SWAMP);
         this.prey = new ArrayList<Class>();
-        this.prey.add(Ghost.class);
-        this.earns = 70;
+        this.prey.add(Selkie.class);
+        this.prey.add(Dragon.class);
+        this.earns = 30;
     }
 
     public int getEarns() {
@@ -26,17 +27,26 @@ public class Unicorn extends Animal {
     }
 
 
-
     public void special() {
 
     }
 
     public ArrayList<BiomeType> habitatCheck() {
-    return this.habitat;
+        return this.habitat;
     }
 
 
     public ArrayList<Class> predateCheck() {
         return this.prey;
+
     }
+
+
+
+
+
+
+
+
+
 }
