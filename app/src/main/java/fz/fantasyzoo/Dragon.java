@@ -11,9 +11,14 @@ public class Dragon extends Animal {
     ArrayList<BiomeType> habitat;
     ArrayList<Class> prey;
 int earns;
+String longName;
+    String shortName;
+
 
 
     public Dragon() {
+        this.shortName = "Dr";
+        this.longName = "Dragons";
 this.habitat = new ArrayList<BiomeType>();
   this.habitat.add(BiomeType.FOREST);
   this.habitat.add(BiomeType.MOUNTAIN);
@@ -22,6 +27,14 @@ this.prey.add(Unicorn.class);
         this.prey.add(Ent.class);
         this.earns = 1000;
 
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public String getLongName() {
+        return longName;
     }
 
     public int getEarns() {

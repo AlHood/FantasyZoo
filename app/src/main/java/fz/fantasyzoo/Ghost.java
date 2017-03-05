@@ -14,8 +14,15 @@ public class Ghost extends Animal {
     ArrayList<BiomeType> habitat;
     ArrayList<Class> prey;
 int earns;
+    String shortName;
+    String longName;
+
+
 
     public Ghost() {
+
+        this.shortName = "Gst";
+        this.longName = "Ghosts";
         this.earns = 0;
         this.habitat = new ArrayList<BiomeType>();
         this.prey = new ArrayList<Class>();
@@ -27,6 +34,14 @@ int earns;
         this.prey.add(Selkie.class);
 //        this.prey.add(Ghost.class); haha i don't trust this line
 
+    }
+
+    public String getLongName() {
+        return longName;
+    }
+
+    public String getShortName() {
+        return shortName;
     }
 
     public int getEarns() {

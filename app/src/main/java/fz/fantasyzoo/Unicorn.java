@@ -12,13 +12,26 @@ public class Unicorn extends Animal {
     ArrayList<BiomeType> habitat;
     ArrayList<Class> prey;
     int earns;
+    String shortName;
+    String longName;
 
     public Unicorn() {
+
+        this.shortName = "Unc";
+        this.longName = "Unicorns";
         this.habitat = new ArrayList<BiomeType>();
         this.habitat.add(BiomeType.FOREST);
         this.prey = new ArrayList<Class>();
         this.prey.add(Ghost.class);
         this.earns = 70;
+    }
+
+    public String getLongName() {
+        return longName;
+    }
+
+    public String getShortName() {
+        return shortName;
     }
 
     public int getEarns() {

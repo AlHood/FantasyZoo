@@ -11,8 +11,12 @@ public class VileFishman extends Animal {
     ArrayList<BiomeType> habitat;
     ArrayList<Class> prey;
     int earns;
+    String shortName;
+    String longName;
 
     public VileFishman() {
+        this.shortName = "VFm";
+        this.longName = "Vile Fishmen";
         this.habitat = new ArrayList<BiomeType>();
         this.habitat.add(BiomeType.OCEAN);
         this.habitat.add(BiomeType.SWAMP);
@@ -20,6 +24,14 @@ public class VileFishman extends Animal {
         this.prey.add(Selkie.class);
         this.prey.add(Dragon.class);
         this.earns = 30;
+    }
+
+    public String getLongName() {
+        return longName;
+    }
+
+    public String getShortName() {
+        return shortName;
     }
 
     public int getEarns() {

@@ -14,8 +14,13 @@ public class Troll extends Animal {
     ArrayList<BiomeType> habitat;
     ArrayList<Class> prey;
     int earns;
+    String shortName;
+    String longName;
 
     public Troll() {
+
+        this.shortName = "Trl";
+        this.longName = "Trolls";
         this.habitat = new ArrayList<BiomeType>();
         this.habitat.add(BiomeType.MOUNTAIN);
         this.habitat.add(BiomeType.SWAMP);
@@ -24,6 +29,14 @@ public class Troll extends Animal {
         this.prey.add(Unicorn.class);
         this.earns = 10;
 
+    }
+
+    public String getShortName() {
+        return shortName;
+    }
+
+    public String getLongName() {
+        return longName;
     }
 
     public int getEarns() {

@@ -14,8 +14,13 @@ public class GiantEagle extends Animal {
     ArrayList<BiomeType> habitat;
     ArrayList<Class> prey;
     int earns;
+    String shortName;
+    String longName;
+
 
     public GiantEagle() {
+            this.shortName = "GEg";
+            this.longName = "Giant Eagles";
         this.habitat = new ArrayList<BiomeType>();
         this.habitat.add(BiomeType.MOUNTAIN);
         this.habitat.add(BiomeType.OCEAN);
@@ -23,6 +28,14 @@ public class GiantEagle extends Animal {
         this.prey.add(Troll.class);
         this.earns = 30;
 
+    }
+
+    public String getLongName() {
+        return longName;
+    }
+
+    public String getShortName() {
+        return shortName;
     }
 
     public int getEarns() {

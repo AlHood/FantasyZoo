@@ -10,7 +10,7 @@ public class Zoo {
 
 
     Integer budget;
-    double security;
+//    double security;
     ArrayList<Enclosure> enclosures;
     Enclosure ocean;
     Enclosure swamp;
@@ -23,8 +23,8 @@ Enclosure tempEnclosure;
 
     public Zoo() {
         this.enclosures = new ArrayList<Enclosure>();
-        this.budget = 100;
-        this.security = 5;
+        this.budget = 250;
+//        this.security = 5;
         ocean = new Enclosure(BiomeType.OCEAN);
         swamp = new Enclosure(BiomeType.SWAMP);
         forest = new Enclosure(BiomeType.FOREST);

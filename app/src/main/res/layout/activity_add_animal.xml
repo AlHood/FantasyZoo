@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/activity_add_animal"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="fz.fantasyzoo.AddAnimalActivity">
+
+
+    <LinearLayout
+        android:gravity="center_horizontal"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Troll: 10$"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/buy_troll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Vile Fishman 30$"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/buy_vilefishman"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:layout_weight="1"/>
+
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp">>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Giant Eagle: 30$"
+            android:layout_weight="1"/>
+
+        <EditText
+            android:id="@+id/buy_gianteagle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Selkie: 40$"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/buy_selkie"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp">>
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Unicorn 70$"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/buy_unicorn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Ent: 100$"
+            android:layout_weight="1" />
+
+        <EditText
+            android:id="@+id/buy_ent"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:layout_weight="1" />
+
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="left"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Dragon: $1000"
+            android:layout_weight="0.6" />
+
+        <EditText
+            android:id="@+id/buy_dragon"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:hint="0"
+            android:layout_weight="2" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:gravity="center"
+        android:orientation="horizontal"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingTop="24dp">>
+
+
+        <Button
+            android:id="@+id/ocean_btn"
+            android:onClick="onOceanButtonClicked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="~~~~~"/>
+
+        <Button
+            android:id="@+id/swamp_btn"
+            android:onClick="onSwampButtonClicked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="_x_Y_"/>
+
+        <Button
+            android:id="@+id/forest_btn"
+            android:onClick="onForestButtonClicked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="tYT|T"/>
+
+        <Button
+            android:id="@+id/mountain_btn"
+            android:onClick="onMountainButtonClicked"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="/^\/\"/>
+
+    </LinearLayout>
+
+
+</LinearLayout>

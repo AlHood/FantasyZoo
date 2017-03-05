@@ -8,4 +8,12 @@
         <item name="colorAccent">@color/colorAccent</item>
     </style>
 
+    <style name="ZooTheme" parent="Theme.AppCompat.Light.NoActionBar">
+        <item name="android:textViewStyle">@style/ZooTextView</item>
+    </style>
+
+    <style name="ZooTextView" parent="android:Widget.TextView">
+        <item name="android:textSize">24sp</item>
+    </style>
+
 </resources>

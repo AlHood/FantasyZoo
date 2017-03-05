@@ -16,8 +16,10 @@ abstract class Animal {
 
     public abstract int getEarns();
 
-
-
+    public abstract String getShortName();
+    public abstract String getLongName();
     }
+
+
 
 

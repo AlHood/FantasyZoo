@@ -56,10 +56,10 @@ public class Enclosure {
         return this.population.size();
     }
 
-//    This method takes in an array of animal classes that a predator would eat and makes a copy into the removal array
+    //    This method takes in an array of animal classes that a predator would eat and makes a copy into the removal array
     public void checkPredMatches(ArrayList<Class> predMatch) throws InstantiationException, IllegalAccessException {
-        for (Animal animal : this.population ) {
-            if (predMatch.contains(animal.getClass() )) {
+        for (Animal animal : this.population) {
+            if (predMatch.contains(animal.getClass())) {
                 tempAnimal = Enclosure.animalBuilder(animal.getClass());
                 this.removal.add(tempAnimal);
             }
@@ -67,11 +67,10 @@ public class Enclosure {
 
     }
 
-//this method gets the prey animal classes from each animal to be passed into the previous method
+    //this method gets the prey animal classes from each animal to be passed into the previous method
     public void checkPredation() throws IllegalAccessException, InstantiationException {
         for (Animal animal : this.population) {
             checkPredMatches(animal.predateCheck());
-
 
 
         }
@@ -85,14 +84,15 @@ public class Enclosure {
                 tempAnimal = Enclosure.animalBuilder(animal.getClass());
                 this.immigrants.add(tempAnimal);
             }
-        }}
+        }
+    }
 
-public void animalRemover(Animal animal) {
-    this.population.remove(animal);
-}
+    public void animalRemover(Animal animal) {
+        this.population.remove(animal);
+    }
 
 
-//for each animal in the removal array, remove a matching animal from population, then clear removals
+    //for each animal in the removal array, remove a matching animal from population, then clear removals
     public void animalPredater() {
         for (Animal animal : this.removal) {
             animalRemover(animal);
@@ -101,7 +101,7 @@ public void animalRemover(Animal animal) {
         this.removal.clear();
     }
 
-//for each animal in the immigration array, remove a matching animal from population, then send all animals to be added to the clockwise enclosure
+    //for each animal in the immigration array, remove a matching animal from population, then send all animals to be added to the clockwise enclosure
     public void animalEvicter(Zoo theZoo) {
         for (Animal animal : this.immigrants) {
             animalRemover(animal);
@@ -147,13 +147,24 @@ public void animalRemover(Animal animal) {
         return biome;
     }
 
-public Integer getIncome() {
-    income = 0;
-    for (Animal animal : this.population) {
-    income += animal.getEarns();
+    public Integer getIncome() {
+        income = 0;
+        for (Animal animal : this.population) {
+            income += animal.getEarns();
+        }
+        return income;
     }
-    return income;
-}
+
+    public String enclosureOverviewGen() {
+//so i guess this needs to iterate over population to generate a string to put in a textview
+        return "";
+    }
+
+    public String enclosureReportGen(){
+//        and similarly this needs to iterate over removals and immigration
+        return "";
+    }
+
 
 
 

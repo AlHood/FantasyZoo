@@ -11,14 +11,29 @@ public class Ent extends Animal {
     ArrayList<BiomeType> habitat;
     ArrayList<Class> prey;
 int earns;
+    String shortName;
+    String longName;
+
+
 
     public Ent() {
+
+        this.shortName = "Et";
+        this.longName = "Ents";
         this.habitat = new ArrayList<BiomeType>();
         this.habitat.add(BiomeType.FOREST);
         this.habitat.add(BiomeType.SWAMP);
         this.prey = new ArrayList<Class>();
         this.prey.add(Troll.class);
         this.earns = 100;
+    }
+
+    public String getLongName() {
+        return longName;
+    }
+
+    public String getShortName() {
+        return shortName;
     }
 
     public int getEarns() {
