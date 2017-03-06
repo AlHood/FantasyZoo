@@ -1,5 +1,6 @@
 package fz.fantasyzoo;
 
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 /**
@@ -15,6 +16,8 @@ public class Enclosure {
     Animal tempAnimal;
     ArrayList<Class> predCheck;
     Integer income;
+
+
 
 
     public Enclosure(BiomeType biome) {
@@ -60,8 +63,9 @@ public class Enclosure {
     public void checkPredMatches(ArrayList<Class> predMatch) throws InstantiationException, IllegalAccessException {
         for (Animal animal : this.population) {
             if (predMatch.contains(animal.getClass())) {
-                tempAnimal = Enclosure.animalBuilder(animal.getClass());
-                this.removal.add(tempAnimal);
+//                tempAnimal = Enclosure.animalBuilder(animal.getClass());
+//                this.removal.add(tempAnimal);
+                this.removal.add(animal);
             }
         }
 
@@ -81,8 +85,9 @@ public class Enclosure {
             if ((animal.habitatCheck()).contains(this.biome)) {
 //    do nothing
             } else {
-                tempAnimal = Enclosure.animalBuilder(animal.getClass());
-                this.immigrants.add(tempAnimal);
+//                tempAnimal = Enclosure.animalBuilder(animal.getClass());
+//                this.immigrants.add(tempAnimal);
+                this.immigrants.add(animal);
             }
         }
     }
@@ -137,11 +142,11 @@ public class Enclosure {
         this.immigrants.clear();
     }
 
-    static public Animal animalBuilder(Class animalClass) throws IllegalAccessException, InstantiationException {
-//     dangerous and shady. Test.
-        return (Animal) (animalClass.newInstance());
+//    static public Animal animalBuilder(Class animalClass) throws IllegalAccessException, InstantiationException {
+////     dangerous and shady. Test.
+//        return (Animal) (animalClass.newInstance());
 //        Seems safe enough.
-    }
+//    }
 
     public BiomeType getBiome() {
         return biome;
@@ -157,7 +162,15 @@ public class Enclosure {
 
     public String enclosureOverviewGen() {
 //so i guess this needs to iterate over population to generate a string to put in a textview
-        return "";
+      ArrayList<Integer> resultArrayList;
+        String reportString;
+        reportString = new String();
+        resultArrayList = new ArrayList<Integer>();
+        resultArrayList = Enclosure.animalArrayToIntegers(this.population);
+
+       reportString = Enclosure.reportArrayToReport(resultArrayList);
+
+        return reportString;
     }
 
     public String enclosureReportGen(){
@@ -167,14 +180,76 @@ public class Enclosure {
 
 
 
+    public static ArrayList<Integer> animalArrayToIntegers(ArrayList<Animal> animalArray) {
+//    my format is going to be troll, VFm, GEagle, selkie, ent, unicorn, dragon, ghost
+        ArrayList<Integer> reportArray;
 
 
+        Integer trollCount;
+        Integer vfmCount;
+        Integer gEagleCount;
+        Integer selkieCount;
+        Integer entCount;
+        Integer unicornCount;
+        Integer dragonCount;
+        Integer ghostCount;
+
+        reportArray = new ArrayList<Integer>();
+
+        trollCount = 0;
+        vfmCount = 0;
+        gEagleCount = 0;
+        selkieCount = 0;
+        entCount = 0;
+        unicornCount = 0;
+        dragonCount = 0;
+        ghostCount = 0;
+
+        for (Animal animal : animalArray) {
+    if (animal.getClass() == Troll.class ) {
+        trollCount += 1; }
+            if (animal.getClass() == VileFishman.class ) {
+                vfmCount += 1; }
+            if (animal.getClass() == GiantEagle.class ) {
+                gEagleCount += 1; }
+            if (animal.getClass() == Selkie.class ) {
+                selkieCount += 1; }
+            if (animal.getClass() == Ent.class ) {
+                entCount += 1; }
+            if (animal.getClass() == Unicorn.class ) {
+                unicornCount += 1; }
+            if (animal.getClass() == Dragon.class ) {
+                dragonCount += 1; }
+            if (animal.getClass() == Ghost.class ) {
+                ghostCount += 1; }
+
+        }
+
+    reportArray.add(0, trollCount);
+        reportArray.add(1, vfmCount);
+        reportArray.add(2, gEagleCount);
+        reportArray.add(3, selkieCount);
+        reportArray.add(4, entCount);
+        reportArray.add(5, unicornCount);
+        reportArray.add(6, dragonCount);
+        reportArray.add(7, ghostCount);
+
+    return reportArray;
+
+    }
+
+public static String reportArrayToReport(ArrayList<Integer> reportArray) {
+    StringBuilder enclosureReport;
+    String enclosureReportString;
+    enclosureReport = new StringBuilder();
+    enclosureReportString = new String();
 
 
+    enclosureReport.append("Trolls: " + reportArray.get(0) + "  Vile Fishmen: " + reportArray.get(1) + "    Giant Eagles: " + reportArray.get(2) + "    Selkies: " + reportArray.get(3) + " Ents: " + reportArray.get(4) + "    Unicorns: " + reportArray.get(5) + "    Dragons: " + reportArray.get(6) + " Ghosts: " + reportArray.get(7) );
 
+enclosureReportString = enclosureReport.toString();
 
-
-
+    return enclosureReportString;
 }
 
 
@@ -182,4 +257,5 @@ public class Enclosure {
 
 
 
+}
 

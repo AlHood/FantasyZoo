@@ -10,15 +10,23 @@ public class Zoo {
 
 
     Integer budget;
-//    double security;
+    //    double security;
     ArrayList<Enclosure> enclosures;
     Enclosure ocean;
     Enclosure swamp;
     Enclosure forest;
     Enclosure mountain;
-Enclosure tempEnclosure;
+    Enclosure tempEnclosure;
     Integer totalIncome;
 
+    Troll troll;
+    VileFishman vileFishman;
+    GiantEagle giantEagle;
+    Selkie selkie;
+    Ent ent;
+    Unicorn unicorn;
+    Dragon dragon;
+    Ghost ghost;
 
 
     public Zoo() {
@@ -41,7 +49,7 @@ Enclosure tempEnclosure;
 
 
     public void addAnimalToPopulation(Animal animal, int enclosureIndex) {
-    tempEnclosure = this.enclosures.get(enclosureIndex);
+        tempEnclosure = this.enclosures.get(enclosureIndex);
         tempEnclosure.addPopulation(animal);
         this.enclosures.set(enclosureIndex, tempEnclosure);
     }
@@ -59,12 +67,10 @@ Enclosure tempEnclosure;
     }
 
 
-
     public int reportEnclosureImmigrationTotal(int enclosureIndex) {
         tempEnclosure = this.enclosures.get(enclosureIndex);
         return tempEnclosure.getImmigrants().size();
     }
-
 
 
     public int reportEnclosureRemovalTotal(int enclosureIndex) {
@@ -73,9 +79,9 @@ Enclosure tempEnclosure;
     }
 
     public Integer getWeeklyEarnings() {
-       totalIncome = 0;
+        totalIncome = 0;
         for (Enclosure enclosure : this.enclosures) {
-           totalIncome += enclosure.getIncome();
+            totalIncome += enclosure.getIncome();
         }
         return totalIncome;
     }
@@ -111,9 +117,65 @@ Enclosure tempEnclosure;
         this.weeklyHabitatCheck();
         this.weeklyImmigrationPerformance();
         this.budget += this.getWeeklyEarnings();
+    }
 
+    public void buyingAnimals(ArrayList<Integer> activityArray, int enclosureIndex) {
+//    taking in an array of integers created from the buying animal activity, adds them to enclosure
+        int i;
+
+        i = activityArray.get(0);
+
+while (i > 0) {
+    troll = new Troll();
+addAnimalToPopulation(troll, enclosureIndex);
+    i --; }
+
+        i = activityArray.get(0);
+        while (i > 0) {
+            vileFishman = new VileFishman();
+            addAnimalToPopulation(vileFishman, enclosureIndex);
+            i --; }
+
+        i = activityArray.get(0);
+        while (i > 0) {
+            giantEagle = new GiantEagle();
+            addAnimalToPopulation(giantEagle, enclosureIndex);
+            i --; }
+
+        i = activityArray.get(0);
+        while (i > 0) {
+            selkie = new Selkie();
+            addAnimalToPopulation(selkie, enclosureIndex);
+            i --; }
+
+        i = activityArray.get(0);
+        while (i > 0) {
+            ent = new Ent();
+            addAnimalToPopulation(ent, enclosureIndex);
+            i --; }
+
+        i = activityArray.get(0);
+        while (i > 0) {
+            unicorn = new Unicorn();
+            addAnimalToPopulation(unicorn, enclosureIndex);
+            i --; }
+
+        i = activityArray.get(0);
+        while (i > 0) {
+            dragon = new Dragon();
+            addAnimalToPopulation(dragon, enclosureIndex);
+            i --; }
+
+        i = activityArray.get(0);
+        while (i > 0) {
+            ghost = new Ghost();
+            addAnimalToPopulation(ghost, enclosureIndex);
+            i --; }
 
     }
+
+
+
 
 
 }

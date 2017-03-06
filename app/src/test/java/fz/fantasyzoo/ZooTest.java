@@ -52,33 +52,33 @@ testEnclosure = new Enclosure(BiomeType.FOREST);
 
     }
 
-    @Test
-    public void test_animalBuilder() {
-        try {
-            placeholder = Enclosure.animalBuilder(Dragon.class);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        }
-        classResult = placeholder.getClass();
-
-        assertEquals( Dragon.class , classResult );
-    }
-
-    @Test
-    public void test_animalBuilderAgain() {
-        try {
-            placeholder = Enclosure.animalBuilder(Unicorn.class);
-        } catch (IllegalAccessException e) {
-            e.printStackTrace();
-        } catch (InstantiationException e) {
-            e.printStackTrace();
-        }
-        classResult = placeholder.getClass();
-
-        assertEquals( Unicorn.class , classResult );
-    }
+//    @Test
+//    public void test_animalBuilder() {
+//        try {
+//            placeholder = Enclosure.animalBuilder(Dragon.class);
+//        } catch (IllegalAccessException e) {
+//            e.printStackTrace();
+//        } catch (InstantiationException e) {
+//            e.printStackTrace();
+//        }
+//        classResult = placeholder.getClass();
+//
+//        assertEquals( Dragon.class , classResult );
+//    }
+//
+//    @Test
+//    public void test_animalBuilderAgain() {
+//        try {
+//            placeholder = Enclosure.animalBuilder(Unicorn.class);
+//        } catch (IllegalAccessException e) {
+//            e.printStackTrace();
+//        } catch (InstantiationException e) {
+//            e.printStackTrace();
+//        }
+//        classResult = placeholder.getClass();
+//
+//        assertEquals( Unicorn.class , classResult );
+//    }
 
     @Test
     public void test_checkHabitatFailures() throws InstantiationException, IllegalAccessException {
@@ -118,6 +118,8 @@ testEnclosure = new Enclosure(BiomeType.FOREST);
 //        manually check output as OCEAN SWAMP FOREST MOUNTAIN
 //        recommended to re-run this test at the end of a large one involving all functions
     }
+
+
 
 
 }
