@@ -16,7 +16,7 @@ public class VileFishman extends Animal {
 
     public VileFishman() {
         this.shortName = "VFm";
-        this.longName = "Vile Fishmen";
+        this.longName = "VileFishman";
         this.habitat = new ArrayList<BiomeType>();
         this.habitat.add(BiomeType.OCEAN);
         this.habitat.add(BiomeType.SWAMP);
@@ -53,12 +53,14 @@ public class VileFishman extends Animal {
 
     }
 
-
-
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "VileFishman{" +
+                "habitat=" + habitat +
+                ", prey=" + prey +
+                ", earns=" + earns +
+                ", shortName='" + shortName + '\'' +
+                ", longName='" + longName + '\'' +
+                '}';
+    }
 }

@@ -58,12 +58,14 @@ public class Troll extends Animal {
 
     }
 
-
-
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Troll{" +
+                "habitat=" + habitat +
+                ", prey=" + prey +
+                ", earns=" + earns +
+                ", shortName='" + shortName + '\'' +
+                ", longName='" + longName + '\'' +
+                '}';
+    }
 }

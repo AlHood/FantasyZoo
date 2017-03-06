@@ -7,6 +7,9 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 
+import com.google.gson.Gson;
+import com.google.gson.GsonBuilder;
+
 import java.util.ArrayList;
 
 public class AddAnimalActivity extends AppCompatActivity {
@@ -31,12 +34,35 @@ EditText buy_troll;
     Button forest_btn;
 Button mountain_btn;
     ArrayList<Integer> buyingArray;
+    String zooString;
+Zoo zoo;
+    Intent intent;
+    String buyingArrayString;
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_add_animal);
+        Intent intent = getIntent();
+
+        GsonBuilder gsonbuilder = new GsonBuilder();
+        gsonbuilder.registerTypeAdapter(VileFishman.class, new AnimalDeserializer());
+        gsonbuilder.registerTypeAdapter(Dragon.class, new AnimalDeserializer());
+        gsonbuilder.registerTypeAdapter(Troll.class, new AnimalDeserializer());
+        gsonbuilder.registerTypeAdapter(GiantEagle.class, new AnimalDeserializer());
+        gsonbuilder.registerTypeAdapter(Selkie.class, new AnimalDeserializer());
+        gsonbuilder.registerTypeAdapter(Ent.class, new AnimalDeserializer());
+        gsonbuilder.registerTypeAdapter(Unicorn.class, new AnimalDeserializer());
+        gsonbuilder.registerTypeAdapter(Ghost.class, new AnimalDeserializer());
+
+
+        Gson gson = gsonbuilder.create();
+        Bundle extras = intent.getExtras();
+
+        zooString = extras.getString("zoo");
+        Zoo zoo = gson.fromJson(zooString, Zoo.class);
+
 buy_troll = (EditText) findViewById(R.id.buy_troll);
         buy_vilefishman = (EditText) findViewById(R.id.buy_vilefishman);
                 buy_gianteagle = (EditText) findViewById(R.id.buy_gianteagle);
@@ -49,6 +75,7 @@ buy_troll = (EditText) findViewById(R.id.buy_troll);
         swamp_btn = (Button) findViewById(R.id.swamp_btn);
         forest_btn = (Button) findViewById(R.id.forest_btn);
         mountain_btn = (Button) findViewById(R.id.mountain_btn);
+        buyingArray = new ArrayList<Integer>();
     }
 
 
@@ -75,10 +102,16 @@ buy_troll = (EditText) findViewById(R.id.buy_troll);
         buyingArray.add(6, dragons);
 
 
+        Gson gson = new Gson();
+        zooString = gson.toJson(zoo);
+        buyingArrayString = gson.toJson(buyingArray);
+
 
         Intent intent = new Intent(AddAnimalActivity.this, OverviewActivity.class);
-        intent.putExtra("buyingArray", buyingArray);
+        intent.putExtra("buyingArray", buyingArrayString);
         intent.putExtra("enclosureIndex", 0);
+        intent.putExtra("zoo", zooString);
+
         startActivity(intent);
     }
 
@@ -106,9 +139,15 @@ buy_troll = (EditText) findViewById(R.id.buy_troll);
 
 
 
+        Gson gson = new Gson();
+        zooString = gson.toJson(zoo);
+        buyingArrayString = gson.toJson(buyingArray);
+
+
         Intent intent = new Intent(AddAnimalActivity.this, OverviewActivity.class);
-        intent.putExtra("buyingArray", buyingArray);
+        intent.putExtra("buyingArray", buyingArrayString);
         intent.putExtra("enclosureIndex", 1);
+        intent.putExtra("zoo", zooString);
 
         startActivity(intent);
     }
@@ -137,9 +176,15 @@ buy_troll = (EditText) findViewById(R.id.buy_troll);
 
 
 
+        Gson gson = new Gson();
+        zooString = gson.toJson(zoo);
+        buyingArrayString = gson.toJson(buyingArray);
+
+
         Intent intent = new Intent(AddAnimalActivity.this, OverviewActivity.class);
-        intent.putExtra("buyingArray", buyingArray);
+        intent.putExtra("buyingArray", buyingArrayString);
         intent.putExtra("enclosureIndex", 2);
+        intent.putExtra("zoo", zooString);
 
         startActivity(intent);
     }
@@ -166,14 +211,19 @@ buy_troll = (EditText) findViewById(R.id.buy_troll);
         dragons = Integer.parseInt((buy_dragon.getText().toString()));
         buyingArray.add(6, dragons);
 
+        Gson gson = new Gson();
+        zooString = gson.toJson(zoo);
+        buyingArrayString = gson.toJson(buyingArray);
 
 
         Intent intent = new Intent(AddAnimalActivity.this, OverviewActivity.class);
-        intent.putExtra("buyingArray", buyingArray);
+        intent.putExtra("buyingArray", buyingArrayString);
         intent.putExtra("enclosureIndex", 3);
+        intent.putExtra("zoo", zooString);
 
         startActivity(intent);
     }
+
 
 
 

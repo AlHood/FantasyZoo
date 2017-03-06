@@ -56,12 +56,14 @@ public class Selkie extends Animal {
 
     }
 
-
-
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Selkie{" +
+                "habitat=" + habitat +
+                ", prey=" + prey +
+                ", earns=" + earns +
+                ", shortName='" + shortName + '\'' +
+                ", longName='" + longName + '\'' +
+                '}';
+    }
 }

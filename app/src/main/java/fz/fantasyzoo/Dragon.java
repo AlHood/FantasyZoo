@@ -56,12 +56,14 @@ this.prey.add(Unicorn.class);
 
     }
 
-
-
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Dragon{" +
+                "habitat=" + habitat +
+                ", prey=" + prey +
+                ", earns=" + earns +
+                ", longName='" + longName + '\'' +
+                ", shortName='" + shortName + '\'' +
+                '}';
+    }
 }

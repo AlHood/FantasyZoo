@@ -54,12 +54,14 @@ int earns;
 
     }
 
-
-
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "Ent{" +
+                "habitat=" + habitat +
+                ", prey=" + prey +
+                ", earns=" + earns +
+                ", shortName='" + shortName + '\'' +
+                ", longName='" + longName + '\'' +
+                '}';
+    }
 }

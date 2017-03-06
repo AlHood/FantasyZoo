@@ -56,12 +56,14 @@ public class GiantEagle extends Animal {
 
     }
 
-
-
-
-
-
-
-
-
+    @Override
+    public String toString() {
+        return "GiantEagle{" +
+                "habitat=" + habitat +
+                ", prey=" + prey +
+                ", earns=" + earns +
+                ", shortName='" + shortName + '\'' +
+                ", longName='" + longName + '\'' +
+                '}';
+    }
 }

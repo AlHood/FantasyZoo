@@ -52,4 +52,15 @@ public class Unicorn extends Animal {
     public ArrayList<Class> predateCheck() {
         return this.prey;
     }
+
+    @Override
+    public String toString() {
+        return "Unicorn{" +
+                "habitat=" + habitat +
+                ", prey=" + prey +
+                ", earns=" + earns +
+                ", shortName='" + shortName + '\'' +
+                ", longName='" + longName + '\'' +
+                '}';
+    }
 }

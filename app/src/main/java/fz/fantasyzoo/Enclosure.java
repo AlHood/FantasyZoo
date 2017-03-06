@@ -13,7 +13,7 @@ public class Enclosure {
     ArrayList<Animal> removal;
     ArrayList<Animal> immigrants;
     BiomeType biome;
-    Animal tempAnimal;
+//    Animal tempAnimal;
     ArrayList<Class> predCheck;
     Integer income;
 

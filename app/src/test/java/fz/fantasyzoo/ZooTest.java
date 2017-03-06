@@ -19,19 +19,20 @@ public class ZooTest {
     Dragon dragon;
     Unicorn unicorn;
     ArrayList<Enclosure> enclosureResult;
-int intResult;
+    int intResult;
     int intResult2;
-Class classResult;
+    Class classResult;
     Enclosure testEnclosure;
     Object objectResult;
     Animal placeholder;
+    ArrayList<Integer> buyingArray;
 
     @Before
     public void before() {
-zoo = new Zoo();
-       dragon = new Dragon();
+        zoo = new Zoo();
+        dragon = new Dragon();
         unicorn = new Unicorn();
-testEnclosure = new Enclosure(BiomeType.FOREST);
+        testEnclosure = new Enclosure(BiomeType.FOREST);
 
     }
 
@@ -89,7 +90,7 @@ testEnclosure = new Enclosure(BiomeType.FOREST);
         intResult = zoo.reportEnclosurePopulationTotal(0);
         intResult2 = zoo.reportEnclosureImmigrationTotal(0);
 
-        assertEquals(1, intResult );
+        assertEquals(1, intResult);
         assertEquals(1, intResult2);
 
     }
@@ -104,14 +105,14 @@ testEnclosure = new Enclosure(BiomeType.FOREST);
         intResult = zoo.reportEnclosurePopulationTotal(0);
         intResult2 = zoo.reportEnclosureRemovalTotal(0);
 
-        assertEquals(2, intResult );
+        assertEquals(2, intResult);
         assertEquals(1, intResult2);
 
     }
 
     @Test
     public void test_checkEnclosuresHaveBiomes() {
-       enclosureResult = zoo.getEnclosures();
+        enclosureResult = zoo.getEnclosures();
         for (Enclosure enclosure : enclosureResult) {
             System.out.println(enclosure.getBiome());
         }
@@ -120,6 +121,44 @@ testEnclosure = new Enclosure(BiomeType.FOREST);
     }
 
 
+    @Test
+    public void test_checkZooBuyingMethod() {
+        buyingArray = new ArrayList<Integer>();
+        buyingArray.add(0, 1);
+        buyingArray.add(1, 0);
+        buyingArray.add(2, 0);
+        buyingArray.add(3, 0);
+        buyingArray.add(4, 0);
+        buyingArray.add(5, 0);
+        buyingArray.add(6, 0);
+        zoo.buyingAnimals(buyingArray, 0);
+
+        enclosureResult = zoo.getEnclosures();
+        intResult = zoo.reportEnclosurePopulationTotal(0);
+
+        assertEquals(1, intResult);
+
+    }
+
+    @Test
+    public void test_checkZooBuyingMethodThoroughly() {
+        buyingArray = new ArrayList<Integer>();
+        buyingArray.add(0, 1);
+        buyingArray.add(1, 1);
+        buyingArray.add(2, 1);
+        buyingArray.add(3, 1);
+        buyingArray.add(4, 1);
+        buyingArray.add(5, 0);
+        buyingArray.add(6, 0);
+
+        zoo.buyingAnimals(buyingArray, 0);
+
+        enclosureResult = zoo.getEnclosures();
+        intResult = zoo.reportEnclosurePopulationTotal(0);
+
+        assertEquals(5, intResult);
+
+    }
 
 
 }

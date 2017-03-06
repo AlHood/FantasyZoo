@@ -18,7 +18,7 @@ public class Zoo {
     Enclosure mountain;
     Enclosure tempEnclosure;
     Integer totalIncome;
-
+    Integer i;
     Troll troll;
     VileFishman vileFishman;
     GiantEagle giantEagle;
@@ -41,6 +41,8 @@ public class Zoo {
         this.enclosures.add(swamp);
         this.enclosures.add(forest);
         this.enclosures.add(mountain);
+        troll = new Troll();
+        this.addAnimalToPopulation(troll, 0);
     }
 
     public ArrayList<Enclosure> getEnclosures() {
@@ -121,56 +123,56 @@ public class Zoo {
 
     public void buyingAnimals(ArrayList<Integer> activityArray, int enclosureIndex) {
 //    taking in an array of integers created from the buying animal activity, adds them to enclosure
-        int i;
+        Integer i;
 
         i = activityArray.get(0);
 
 while (i > 0) {
     troll = new Troll();
 addAnimalToPopulation(troll, enclosureIndex);
-    i --; }
+    i--; }
 
-        i = activityArray.get(0);
+        i = activityArray.get(1);
         while (i > 0) {
             vileFishman = new VileFishman();
             addAnimalToPopulation(vileFishman, enclosureIndex);
-            i --; }
+            i--; }
 
-        i = activityArray.get(0);
+        i = activityArray.get(2);
         while (i > 0) {
             giantEagle = new GiantEagle();
             addAnimalToPopulation(giantEagle, enclosureIndex);
-            i --; }
+            i--; }
 
-        i = activityArray.get(0);
+        i = activityArray.get(3);
         while (i > 0) {
             selkie = new Selkie();
             addAnimalToPopulation(selkie, enclosureIndex);
-            i --; }
+            i--; }
 
-        i = activityArray.get(0);
+        i = activityArray.get(4);
         while (i > 0) {
             ent = new Ent();
             addAnimalToPopulation(ent, enclosureIndex);
-            i --; }
+            i--; }
 
-        i = activityArray.get(0);
+        i = activityArray.get(5);
         while (i > 0) {
             unicorn = new Unicorn();
             addAnimalToPopulation(unicorn, enclosureIndex);
-            i --; }
+            i--; }
 
-        i = activityArray.get(0);
+        i = activityArray.get(6);
         while (i > 0) {
             dragon = new Dragon();
             addAnimalToPopulation(dragon, enclosureIndex);
-            i --; }
-
-        i = activityArray.get(0);
+            i--; }
+        i = activityArray.get(7);
         while (i > 0) {
             ghost = new Ghost();
             addAnimalToPopulation(ghost, enclosureIndex);
-            i --; }
+            i--; }
+
 
     }
 
