@@ -20,7 +20,7 @@ public class GiantEagle extends Animal {
 
     public GiantEagle() {
             this.shortName = "GEg";
-            this.longName = "Giant Eagles";
+            this.longName = "GiantEagle";
         this.habitat = new ArrayList<BiomeType>();
         this.habitat.add(BiomeType.MOUNTAIN);
         this.habitat.add(BiomeType.OCEAN);

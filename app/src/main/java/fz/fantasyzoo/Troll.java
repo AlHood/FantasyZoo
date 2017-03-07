@@ -20,7 +20,7 @@ public class Troll extends Animal {
     public Troll() {
 
         this.shortName = "Trl";
-        this.longName = "Trolls";
+        this.longName = "Troll";
         this.habitat = new ArrayList<BiomeType>();
         this.habitat.add(BiomeType.MOUNTAIN);
         this.habitat.add(BiomeType.SWAMP);

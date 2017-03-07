@@ -18,7 +18,7 @@ String longName;
 
     public Dragon() {
         this.shortName = "Dr";
-        this.longName = "Dragons";
+        this.longName = "Dragon";
 this.habitat = new ArrayList<BiomeType>();
   this.habitat.add(BiomeType.FOREST);
   this.habitat.add(BiomeType.MOUNTAIN);

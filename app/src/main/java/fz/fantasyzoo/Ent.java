@@ -19,7 +19,7 @@ int earns;
     public Ent() {
 
         this.shortName = "Et";
-        this.longName = "Ents";
+        this.longName = "Ent";
         this.habitat = new ArrayList<BiomeType>();
         this.habitat.add(BiomeType.FOREST);
         this.habitat.add(BiomeType.SWAMP);

@@ -20,7 +20,7 @@ public class Selkie extends Animal {
     public Selkie() {
 
         this.shortName = "Slk";
-        this.longName = "Selkies";
+        this.longName = "Selkie";
         this.habitat = new ArrayList<BiomeType>();
         this.habitat.add(BiomeType.OCEAN);
         this.habitat.add(BiomeType.FOREST);

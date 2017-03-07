@@ -18,7 +18,7 @@ public class Unicorn extends Animal {
     public Unicorn() {
 
         this.shortName = "Unc";
-        this.longName = "Unicorns";
+        this.longName = "Unicorn";
         this.habitat = new ArrayList<BiomeType>();
         this.habitat.add(BiomeType.FOREST);
         this.prey = new ArrayList<Class>();

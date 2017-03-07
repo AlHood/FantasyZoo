@@ -15,6 +15,7 @@ public class AnimalDeserializer implements JsonDeserializer<Animal> {
     public Animal deserialize(JsonElement json, Type typeOfT, JsonDeserializationContext context)
             throws JsonParseException {
         String info = json.getAsJsonPrimitive().getAsString();
+
 //        return new Animal(json.getAsJsonPrimitive().getAsString());
         return new Troll();
     }

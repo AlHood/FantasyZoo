@@ -22,7 +22,7 @@ int earns;
     public Ghost() {
 
         this.shortName = "Gst";
-        this.longName = "Ghosts";
+        this.longName = "Ghost";
         this.earns = 0;
         this.habitat = new ArrayList<BiomeType>();
         this.prey = new ArrayList<Class>();

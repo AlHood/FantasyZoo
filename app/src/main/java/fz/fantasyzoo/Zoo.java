@@ -12,10 +12,7 @@ public class Zoo {
     Integer budget;
     //    double security;
     ArrayList<Enclosure> enclosures;
-    Enclosure ocean;
-    Enclosure swamp;
-    Enclosure forest;
-    Enclosure mountain;
+
     Enclosure tempEnclosure;
     Integer totalIncome;
     Integer i;
@@ -28,21 +25,33 @@ public class Zoo {
     Dragon dragon;
     Ghost ghost;
 
+static public void setupZoo(Zoo zoo) {
+    Enclosure ocean;
+    Enclosure swamp;
+    Enclosure forest;
+    Enclosure mountain;
+Troll troll;
+
+    ocean = new Enclosure(BiomeType.OCEAN);
+    swamp = new Enclosure(BiomeType.SWAMP);
+    forest = new Enclosure(BiomeType.FOREST);
+    mountain = new Enclosure(BiomeType.MOUNTAIN);
+
+    zoo.enclosures.add(ocean);
+    zoo.enclosures.add(swamp);
+    zoo.enclosures.add(forest);
+    zoo.enclosures.add(mountain);
+
+//    troll = new Troll();
+//    zoo.addAnimalToPopulation(troll, 0);
+}
 
     public Zoo() {
         this.enclosures = new ArrayList<Enclosure>();
         this.budget = 250;
 //        this.security = 5;
-        ocean = new Enclosure(BiomeType.OCEAN);
-        swamp = new Enclosure(BiomeType.SWAMP);
-        forest = new Enclosure(BiomeType.FOREST);
-        mountain = new Enclosure(BiomeType.MOUNTAIN);
-        this.enclosures.add(ocean);
-        this.enclosures.add(swamp);
-        this.enclosures.add(forest);
-        this.enclosures.add(mountain);
-        troll = new Troll();
-        this.addAnimalToPopulation(troll, 0);
+
+        Zoo.setupZoo(this);
     }
 
     public ArrayList<Enclosure> getEnclosures() {
@@ -51,16 +60,21 @@ public class Zoo {
 
 
     public void addAnimalToPopulation(Animal animal, int enclosureIndex) {
-        tempEnclosure = this.enclosures.get(enclosureIndex);
-        tempEnclosure.addPopulation(animal);
-        this.enclosures.set(enclosureIndex, tempEnclosure);
+//        tempEnclosure = this.enclosures.get(enclosureIndex);
+//        tempEnclosure.addPopulation(animal);
+//        this.enclosures.set(enclosureIndex, tempEnclosure);
+        this.enclosures.get(enclosureIndex).addPopulation(animal);
+
     }
 
     public void addAllAnimalsToPopulation(ArrayList<Animal> animals, int enclosureIndex) {
-        tempEnclosure = new Enclosure(BiomeType.FOREST);
-        tempEnclosure = this.enclosures.get(enclosureIndex);
-        tempEnclosure.addBigPopulation(animals);
-        this.enclosures.set(enclosureIndex, tempEnclosure);
+//        tempEnclosure = new Enclosure(BiomeType.FOREST);
+//        tempEnclosure = this.enclosures.get(enclosureIndex);
+//        tempEnclosure.addBigPopulation(animals);
+//        this.enclosures.set(enclosureIndex, tempEnclosure);
+
+        this.enclosures.get(enclosureIndex).addBigPopulation(animals);
+
     }
 
     public int reportEnclosurePopulationTotal(int enclosureIndex) {
