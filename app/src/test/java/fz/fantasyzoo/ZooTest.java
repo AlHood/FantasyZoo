@@ -2,6 +2,8 @@ package fz.fantasyzoo;
 
 import com.google.gson.Gson;
 import com.google.gson.GsonBuilder;
+import com.google.gson.JsonObject;
+import com.google.gson.JsonParser;
 
 import org.junit.Before;
 import org.junit.Test;
@@ -33,6 +35,8 @@ public class ZooTest {
     Zoo zoo2;
     String animalString;
     Dragon dragon2;
+    Troll troll;
+    Troll troll2;
 
 
     @Before
@@ -41,6 +45,7 @@ public class ZooTest {
         dragon = new Dragon();
         unicorn = new Unicorn();
         testEnclosure = new Enclosure(BiomeType.FOREST);
+        troll = new Troll();
 
     }
 
@@ -173,7 +178,7 @@ public class ZooTest {
 
     @Test
     public void test_deserialKiller() {
-//        zoo.addAnimalToPopulation(dragon, 0);
+        zoo.addAnimalToPopulation(dragon, 0);
 
         GsonBuilder gsonbuilder = new GsonBuilder();
         gsonbuilder.registerTypeAdapter(VileFishman.class, new AnimalSerializer());
@@ -184,22 +189,32 @@ public class ZooTest {
         gsonbuilder.registerTypeAdapter(Ent.class, new AnimalSerializer());
         gsonbuilder.registerTypeAdapter(Unicorn.class, new AnimalSerializer());
         gsonbuilder.registerTypeAdapter(Ghost.class, new AnimalSerializer());
-//        gsonbuilder.registerTypeAdapter(Animal.class, new AnimalDeserializer());
+        gsonbuilder.registerTypeAdapter(Animal.class, new AnimalDeserializer());
 
         Gson gson = gsonbuilder.create();
         zooString = gson.toJson(zoo);
         animalString = gson.toJson(dragon);
-        System.out.println(gson.toJson("TEST" + unicorn));
-    dragon2 = gson.fromJson(animalString, Dragon.class);
+
+        JsonParser parser = new JsonParser();
+        JsonObject obj = parser.parse(animalString).getAsJsonObject();
+
+        troll2 = gson.fromJson(animalString, Troll.class);
+
+
+
+//        JsonParser parser = new JsonParser();
+//        JsonObject obj = parser.parse(zooString).getAsJsonObject();
+    dragon2 = gson.fromJson(obj.get("Dragon"), Dragon.class);
+        System.out.println("DRAGON " + dragon2);
 
         System.out.println(zooString);
         System.out.println(animalString);
 
 
-
-        enclosureResult = zoo.getEnclosures();
-        for (Enclosure enclosure : enclosureResult) {
-            System.out.println(enclosure.getBiome());
+//
+//        enclosureResult = zoo.getEnclosures();
+//        for (Enclosure enclosure : enclosureResult) {
+//            System.out.println(enclosure.getBiome());
 
             zoo2 = gson.fromJson(zooString, Zoo.class);
 
@@ -213,4 +228,4 @@ public class ZooTest {
 
     }
 
-}
+

@@ -1,0 +1,66 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context="fz.fantasyzoo.NewMainActivity">
+
+
+    <TextView
+    android:id="@+id/ocean_overview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Ocean Enclosure:"
+        android:background="#0E79B2" />
+
+    <TextView
+    android:id="@+id/swamp_overview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Swamp Enclosure"
+        android:background="#BACDB0" />
+
+    <TextView
+    android:id="@+id/forest_overview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Forest Enclosure"
+        android:background="#99C24D" />
+
+    <TextView
+    android:id="@+id/mountain_overview"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:text="Mountain Enclosure"
+        android:background="#A4BFEB" />
+
+
+    <LinearLayout
+    android:gravity="center"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:paddingTop="24dp">
+
+        <Button
+            android:onClick="onRefreshButtonClicked"
+            android:id="@+id/refresh_btn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="refresh"/>
+
+    <Button
+    android:onClick="onAdvanceButtonClicked"
+    android:id="@+id/advance_btn"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:text="LET'S GO!"/>
+
+
+    </LinearLayout>
+
+</LinearLayout>

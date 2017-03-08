@@ -3,24 +3,21 @@
     package="fz.fantasyzoo">
 
     <application
-      android:theme="@style/ZooTheme"
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
-        >
-        <activity android:name=".OverviewActivity">
+        android:theme="@style/ZooTheme">
+        <activity
+            android:name=".NewMainActivity"
+            android:label="@string/title_activity_new_main"
+            android:theme="@style/ZooTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".AddAnimalActivity" />
-        <activity android:name=".WeeklyReportActivity"></activity>
-
-
-
     </application>
 
 </manifest>

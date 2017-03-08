@@ -16,4 +16,8 @@
         <item name="android:textSize">24sp</item>
     </style>
 
+    <style name="ZooTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
+
+    <style name="ZooTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
 </resources>

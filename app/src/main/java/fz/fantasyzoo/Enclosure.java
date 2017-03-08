@@ -16,6 +16,7 @@ public class Enclosure {
 //    Animal tempAnimal;
     ArrayList<Class> predCheck;
     Integer income;
+    int p;
 
 
 
@@ -62,10 +63,12 @@ public class Enclosure {
     //    This method takes in an array of animal classes that a predator would eat and makes a copy into the removal array
     public void checkPredMatches(ArrayList<Class> predMatch) throws InstantiationException, IllegalAccessException {
         for (Animal animal : this.population) {
+
             if (predMatch.contains(animal.getClass())) {
 //                tempAnimal = Enclosure.animalBuilder(animal.getClass());
 //                this.removal.add(tempAnimal);
-                this.removal.add(animal);
+                if(p > 0) {this.removal.add(animal);
+                p--;}
             }
         }
 
@@ -74,6 +77,7 @@ public class Enclosure {
     //this method gets the prey animal classes from each animal to be passed into the previous method
     public void checkPredation() throws IllegalAccessException, InstantiationException {
         for (Animal animal : this.population) {
+            p = 2;
             checkPredMatches(animal.predateCheck());
 
 
